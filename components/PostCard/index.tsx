@@ -72,7 +72,7 @@ export const PostCard = (props) => {
                 </Title>
 
                 <Description>
-                    {body.slice(0, 24)}
+                    {body && body.slice(0, 24)}
                 </Description>
             </CardWrapper>
         </Link>
