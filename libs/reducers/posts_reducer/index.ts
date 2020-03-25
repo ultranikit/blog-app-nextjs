@@ -1,51 +1,49 @@
-import * as action_type from './types';
+import * as actionType from './types';
 
-export const example = {
-
-};
+export const example = {};
 // state for start
-const initialState: action_type.PostsState = {
+const initialState: actionType.PostsState = {
     posts: [],
-    single_post: {},
+    singlePost: {},
     onFailStatus: false,
     onSuccessStatus: false,
-    response_message: undefined,
+    responseMessage: undefined,
 };
 
-export const postsReducer = (state = initialState, action): action_type.PostsState => {
-    const {type, payload} = action;
+export const postsReducer = (state = initialState, action): actionType.PostsState => {
+    const { type, payload } = action;
     switch (type) {
-        case action_type.ON_FAIL:
+        case actionType.ON_FAIL:
             return {
                 ...state,
-                onFailStatus: !state.onFailStatus
+                onFailStatus: !state.onFailStatus,
             };
-        case action_type.ON_SUCCESS:
+        case actionType.ON_SUCCESS:
             return {
                 ...state,
-                onSuccessStatus: !state.onSuccessStatus
+                onSuccessStatus: !state.onSuccessStatus,
             };
-        case action_type.RESPONSE_MESSAGE:
+        case actionType.responseMessage:
             return {
                 ...state,
-                response_message: payload
+                responseMessage: payload,
             };
-        case action_type.SET_POSTS_DATA:
+        case actionType.SET_POSTS_DATA:
             return {
                 ...state,
-                posts: payload
+                posts: payload,
             };
-        case action_type.ADD_NEW_POST:
+        case actionType.ADD_NEW_POST:
             return {
                 ...state,
-                posts: [...state.posts, payload]
+                posts: [...state.posts, payload],
             };
-        case action_type.GET_SINGLE_POST:
+        case actionType.GET_SINGLE_POST:
             return {
                 ...state,
-                single_post: payload
+                singlePost: payload,
             };
         default:
-            return state
+            return state;
     }
 };

@@ -1,5 +1,16 @@
 import React from 'react';
-import styled from "styled-components";
+import styled from 'styled-components';
+
+export const SuccessMessage = ({ message, callback }) => {
+    return (
+        <Wrap>
+            <SuccessWrap>
+                <MessageWrap>{message}</MessageWrap>
+                <Button onClick={callback}>ok</Button>
+            </SuccessWrap>
+        </Wrap>
+    );
+};
 
 const Wrap = styled.div`
     position: fixed;
@@ -25,8 +36,8 @@ const SuccessWrap = styled.div`
     background-color: #eaeaea;
     border-radius: 10px;
     padding: 30px;
-    z-index:3;
-     box-shadow: 0 10px 20px rgba(0,0,0,.19), 0 6px 6px rgba(0,0,0,.23);
+    z-index: 3;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 `;
 
 const MessageWrap = styled.p`
@@ -43,16 +54,3 @@ const Button = styled.a`
     color: #fff;
     text-transform: uppercase;
 `;
-
-export const SuccessMessage = ({message, callback}) => {
-    return (
-        <Wrap>
-            <SuccessWrap>
-                <MessageWrap>
-                    {message}
-                </MessageWrap>
-                <Button onClick={callback}>ok</Button>
-            </SuccessWrap>
-        </Wrap>
-    )
-};
